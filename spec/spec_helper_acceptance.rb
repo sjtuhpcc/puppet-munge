@@ -26,7 +26,6 @@ RSpec.configure do |c|
       copy_root_module_to(host, :module_name => 'munge')
       copy_root_module_to(host, :source => File.join(proj_root, 'tests/site_munge'), :module_name => 'site_munge')
       on host, puppet('module', 'install', 'puppetlabs-stdlib', '--version', '">=3.2.0 <5.0.0"'), { :acceptable_exit_codes => [0,1] }
-      on host, puppet('module', 'install', 'stahnma-epel', '--version', '"0.x"'), { :acceptable_exit_codes => [0,1] }
     end
   end
 end

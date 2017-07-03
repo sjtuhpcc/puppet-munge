@@ -7,7 +7,6 @@ class munge::params {
   case $::osfamily {
     'RedHat': {
       $package_name       = 'munge'
-      $package_require    = Yumrepo['epel']
       $dev_package_name   = 'munge-devel'
       $service_name       = 'munge'
       $service_hasstatus  = true

@@ -1,11 +1,9 @@
 shared_context "munge::install" do
-  it { should contain_class('epel') }
 
   it do
     should contain_package('munge').only_with({
       :ensure   => 'present',
       :name     => 'munge',
-      :require  => 'Yumrepo[epel]',
     })
   end
 
@@ -18,7 +16,6 @@ shared_context "munge::install" do
       should contain_package('munge-devel').only_with({
         :ensure   => 'present',
         :name     => 'munge-devel',
-        :require  => 'Yumrepo[epel]',
       })
     end
   end
